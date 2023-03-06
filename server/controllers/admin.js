@@ -3,11 +3,12 @@ const User = require("../models/user");
 const Admin = require("../models/admin");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-
 module.exports = {
   adminLogin: async (req, res) => {
+    console.log(req.body.email);
     try {
       const admin = await Admin.findOne({ email: req.body.email });
+      console.log(admin);
       if (admin) {
         const isPasswordValid = await bcrypt.compare(
           req.body.password,
@@ -108,6 +109,7 @@ module.exports = {
     }
   },
   verifyToken: async (req, res) => {
+    console.log(req.body);
     const Token = req.body.Token;
     try {
       const decoded = jwt.verify(Token, "myWebAppSecretKey123");

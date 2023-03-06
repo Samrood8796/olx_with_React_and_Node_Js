@@ -8,6 +8,7 @@ const usernameSlice = createSlice({
       return action.payload;
     },
   },
+  
   extraReducers: {
     logout: () => {
       return false;

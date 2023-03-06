@@ -13,12 +13,12 @@ import { adminLogin } from "../../utils/Constants";
 
 function Login() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const navigate = useNavigate();  
   const [email, setEmail] = useState("admin@gmail.com");
-  const [password, setPassword] = useState("safeer123");
-  const Submit = (e) => {
+  const [password, setPassword] = useState("samru123");
+  const Submit = (e) => {    
     e.preventDefault();
-    const body = JSON.stringify({
+    const body = JSON.stringify({        
       email,
       password,
     });
@@ -43,6 +43,7 @@ function Login() {
         navigate("/dash");
       })
       .catch((err) => {
+        console.log(err);
         Swal.fire({
           position: "center",
           icon: "warning",
@@ -61,7 +62,7 @@ function Login() {
               <img
                 src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
                 className="img-fluid"
-                alt="Sample image"
+                alt="Sample "
               />
             </div>
             <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">

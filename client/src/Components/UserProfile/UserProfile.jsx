@@ -41,7 +41,7 @@ function UserProfile() {
     const { value: file } = await Swal.fire({
       title: "Select image",
       input: "file",
-
+      
       inputAttributes: {
         accept: "image/*",
         "aria-label": "Upload your profile picture",
